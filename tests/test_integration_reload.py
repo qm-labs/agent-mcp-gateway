@@ -967,8 +967,10 @@ class TestGatewayRulesReloadAffectsAccess:
             "agents": {
                 "agent1": {
                     "allow": {
-                        "servers": ["server1"],
-                        "tools": {"server1": []}  # Empty allow list
+                        "servers": ["server1"]
+                    },
+                    "deny": {
+                        "tools": {"server1": ["*"]}  # Explicitly deny all tools
                     }
                 }
             }
